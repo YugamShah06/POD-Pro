@@ -1,0 +1,1205 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2025.1" RunE2="T">
+  <Nodes>
+    <Node ToolID="29">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1038" y="606" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Priority Band" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Priority Band" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_Weighted Score" selected="False" input="Left_" />
+                <SelectField field="Left_Priority Band" selected="False" input="Left_" />
+                <SelectField field="Right_Composite Score" selected="False" input="Right_" />
+                <SelectField field="Right_Priority Band" selected="True" rename="Right_Priority Band" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="30">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1134" y="606" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="32">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1026" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Priority Band" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Right_Priority Band" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Right_Priority Band" selected="False" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="42">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="1337" y="185" width="313" height="325" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Merged Data</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Merged Data</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="33">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1362" y="234" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="IF [Club/Committee] = &quot;N&quot; THEN &quot;No&quot; &#xA;Elseif [Club/Committee] = &quot;Y&quot; THEN &quot;Yes&quot; &#xA;Else &quot;Invalid&quot;&#xA;ENDIF" field="Club/Committee" size="255" type="V_String" enabled="true" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Club/Committee = IF [Club/Committee] = "N" THEN "No" 
+Elseif [Club/Committee] = ...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="34">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="1362" y="426" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Weighted Score " selected="True" type="FixedDecimal" size="19.2" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="36">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="1518" y="426" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\SAMARTH\AppData\Local\Temp\Alteryx\Engine_18128_1f3ef00099a24288848918397f1116b2_\Engine_18128_f90f0ef6bd2b481288b18880253496ee~.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="37">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="1470" y="234" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="38">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="1566" y="234" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\SAMARTH\AppData\Local\Temp\Alteryx\Engine_18128_1f3ef00099a24288848918397f1116b2_\Engine_18128_5b830b917fb14277b3040bcdf9a6bf65~.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="41">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="149" y="833" width="563" height="327" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Delivery</Caption>
+          <Style TextColor="#314c4a" FillColor="#80ffff" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Delivery</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="3">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="174" y="882" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Delivery Pratner$`</File>
+              <FormatSpecificOptions>
+                <FirstRowData>False</FirstRowData>
+                <ImportLine>1</ImportLine>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Cleaned dataset.xlsx
+Query=`Delivery Pratner$`</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Delivery Ops ID" size="255" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Delivery Pratner$`" type="V_String" />
+                <Field name="Delivery Partner" size="255" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Delivery Pratner$`" type="V_String" />
+                <Field name="Contact Details" size="255" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Delivery Pratner$`" type="V_String" />
+                <Field name="Website address" size="255" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Delivery Pratner$`" type="V_String" />
+                <Field name=" Provide Tracking " size="255" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Delivery Pratner$`" type="V_String" />
+                <Field name="VendorExperience" size="255" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Delivery Pratner$`" type="V_String" />
+                <Field name="Coordination" size="255" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Delivery Pratner$`" type="V_String" />
+                <Field name="OrderCapacity" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Delivery Pratner$`" type="Double" />
+                <Field name="Ownership" size="255" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Delivery Pratner$`" type="V_String" />
+                <Field name="Accountability" size="255" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Delivery Pratner$`" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="7">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="174" y="1014" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Delivery OPS ScoreCard$`</File>
+              <FormatSpecificOptions>
+                <FirstRowData>False</FirstRowData>
+                <ImportLine>1</ImportLine>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Cleaned dataset.xlsx
+Query=`Delivery OPS ScoreCard$`</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Delivery Ops ID" size="255" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Delivery OPS ScoreCard$`" type="V_String" />
+                <Field name="Tool Comfort (20%)" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Delivery OPS ScoreCard$`" type="Double" />
+                <Field name="Logistics Coordination (20%)" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Delivery OPS ScoreCard$`" type="Double" />
+                <Field name="Multi-Order Management (20%)" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Delivery OPS ScoreCard$`" type="Double" />
+                <Field name="Problem Solving &amp; Escalations (20%)" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Delivery OPS ScoreCard$`" type="Double" />
+                <Field name="Timely Updates (15%)" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Delivery OPS ScoreCard$`" type="Double" />
+                <Field name="Vendor Coordination Feedback (5%)" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Delivery OPS ScoreCard$`" type="Double" />
+                <Field name="Composite Score" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Delivery OPS ScoreCard$`" type="Double" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="10">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="294" y="882" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="OrderCapacity" selected="True" type="Int64" size="8" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="16">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="294" y="1014" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Tool Comfort (20%)" selected="True" type="Int64" size="8" />
+                <SelectField field="Logistics Coordination (20%)" selected="True" type="Int64" size="8" />
+                <SelectField field="Multi-Order Management (20%)" selected="True" type="Int64" size="8" />
+                <SelectField field="Problem Solving &amp; Escalations (20%)" selected="True" type="Int64" size="8" />
+                <SelectField field="Timely Updates (15%)" selected="True" type="Int64" size="8" />
+                <SelectField field="Vendor Coordination Feedback (5%)" selected="True" type="Int64" size="8" />
+                <SelectField field="Composite Score" selected="True" type="FixedDecimal" size="19.2" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="21">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="390" y="954" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="Delivery Ops ID" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="Delivery Ops ID" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Right_Delivery Ops ID" selected="False" rename="Right_Delivery Ops ID" input="Right_" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="26">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="486" y="954" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field=" Provide Tracking " selected="False" />
+                <SelectField field="VendorExperience" selected="False" />
+                <SelectField field="Coordination" selected="False" />
+                <SelectField field="OrderCapacity" selected="False" />
+                <SelectField field="Ownership" selected="False" />
+                <SelectField field="Accountability" selected="False" />
+                <SelectField field="Tool Comfort (20%)" selected="False" />
+                <SelectField field="Logistics Coordination (20%)" selected="False" />
+                <SelectField field="Multi-Order Management (20%)" selected="False" />
+                <SelectField field="Problem Solving &amp; Escalations (20%)" selected="False" />
+                <SelectField field="Timely Updates (15%)" selected="False" />
+                <SelectField field="Vendor Coordination Feedback (5%)" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="28">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="582" y="954" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="IF [Composite Score] &gt;= 4.5 THEN &quot;A&quot;&#xA;ELSEIF [Composite Score] &gt;= 3.5 THEN &quot;B&quot;&#xA;ELSEIF [Composite Score] &gt;= 2.5 THEN &quot;C&quot;&#xA;ELSE &quot;D&quot;&#xA;ENDIF&#xA;" field="Priority Band" size="1073741823" type="V_WString" enabled="true" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Priority Band = IF [Composite Score] &gt;= 4.5 THEN "A"
+ELSEIF [Composite Score] &gt;=...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="40">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="149" y="461" width="564" height="327" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Vendor</Caption>
+          <Style TextColor="#314c4a" FillColor="#80ffff" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Vendor</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="2">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="174" y="510" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Vendor$`</File>
+              <FormatSpecificOptions>
+                <FirstRowData>False</FirstRowData>
+                <ImportLine>1</ImportLine>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Cleaned dataset.xlsx
+Query=`Vendor$`</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Vendor ID" size="255" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Vendor$`" type="V_String" />
+                <Field name="Vendor Name" size="255" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Vendor$`" type="V_String" />
+                <Field name="Business Name" size="255" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Vendor$`" type="V_String" />
+                <Field name="Owner Name" size="255" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Vendor$`" type="V_String" />
+                <Field name="Location (City / Area)" size="255" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Vendor$`" type="V_String" />
+                <Field name="Phone &amp; WhatsApp" size="255" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Vendor$`" type="V_String" />
+                <Field name="Email" size="255" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Vendor$`" type="V_String" />
+                <Field name="Type of Business" size="255" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Vendor$`" type="V_String" />
+                <Field name="Items printed" size="255" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Vendor$`" type="V_String" />
+                <Field name="Min T-Shirts" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Vendor$`" type="Double" />
+                <Field name="Min Hoodies" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Vendor$`" type="Double" />
+                <Field name="Min Mugs" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Vendor$`" type="Double" />
+                <Field name=" Others" size="255" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Vendor$`" type="V_String" />
+                <Field name="Delivery turnaround time" size="255" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Vendor$`" type="V_WString" />
+                <Field name="Design Templates" size="255" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Vendor$`" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="5">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="174" y="642" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Supply ScoreCard$`</File>
+              <FormatSpecificOptions>
+                <FirstRowData>False</FirstRowData>
+                <ImportLine>1</ImportLine>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Cleaned dataset.xlsx
+Query=`Supply ScoreCard$`</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Vendor_Id" size="255" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Supply ScoreCard$`" type="V_String" />
+                <Field name="Product Quality Score (25%)" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Supply ScoreCard$`" type="Double" />
+                <Field name="MOQ Flexibility Score (15%)" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Supply ScoreCard$`" type="Double" />
+                <Field name="TAT (Days)" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Supply ScoreCard$`" type="Double" />
+                <Field name="TAT Score" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Supply ScoreCard$`" type="Double" />
+                <Field name="Communication &amp; Responsiveness Score (15%)" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Supply ScoreCard$`" type="Double" />
+                <Field name="GST &amp; Digital Readiness Score (15%)" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Supply ScoreCard$`" type="Double" />
+                <Field name="Return/Replacement Responsiveness Score (5%)" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Supply ScoreCard$`" type="Double" />
+                <Field name="Weighted Score " source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Supply ScoreCard$`" type="Double" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="9">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="294" y="510" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Min T-Shirts" selected="True" type="Int64" size="8" />
+                <SelectField field="Min Hoodies" selected="True" type="Int64" size="8" />
+                <SelectField field="Min Mugs" selected="True" type="Int64" size="8" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="14">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="294" y="642" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Product Quality Score (25%)" selected="True" type="Int64" size="8" />
+                <SelectField field="MOQ Flexibility Score (15%)" selected="True" type="Int64" size="8" />
+                <SelectField field="TAT (Days)" selected="True" type="Int64" size="8" />
+                <SelectField field="TAT Score" selected="True" type="Int64" size="8" />
+                <SelectField field="Communication &amp; Responsiveness Score (15%)" selected="True" type="Int64" size="8" />
+                <SelectField field="GST &amp; Digital Readiness Score (15%)" selected="True" type="Int64" size="8" />
+                <SelectField field="Return/Replacement Responsiveness Score (5%)" selected="True" type="Int64" size="8" />
+                <SelectField field="Weighted Score (/5)" selected="True" type="FixedDecimal" size="19.2" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="20">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="402" y="570" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="Vendor ID" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="Vendor_Id" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Right_Vendor_Id" selected="False" input="Right_" />
+                    <SelectField field="Right_Weighted Score (/5)" selected="True" rename="Weighted Score" input="Right_" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="25">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="498" y="570" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Type of Business" selected="False" />
+                <SelectField field="Items printed" selected="False" />
+                <SelectField field="Min T-Shirts" selected="False" />
+                <SelectField field="Min Hoodies" selected="False" />
+                <SelectField field="Min Mugs" selected="False" />
+                <SelectField field=" Others" selected="False" />
+                <SelectField field="Product Quality Score (25%)" selected="False" />
+                <SelectField field="MOQ Flexibility Score (15%)" selected="False" />
+                <SelectField field="TAT (Days)" selected="False" />
+                <SelectField field="TAT Score" selected="False" />
+                <SelectField field="Communication &amp; Responsiveness Score (15%)" selected="False" />
+                <SelectField field="GST &amp; Digital Readiness Score (15%)" selected="False" />
+                <SelectField field="Return/Replacement Responsiveness Score (5%)" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="27">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="582" y="570" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="IF [Weighted Score ] &gt;= 4.5 THEN &quot;A&quot;&#xA;ELSEIF [Weighted Score ] &gt;= 3.5 THEN &quot;B&quot;&#xA;ELSEIF [Weighted Score ] &gt;= 2.5 THEN &quot;C&quot;&#xA;ELSE &quot;D&quot;&#xA;ENDIF&#xA;" field="Priority Band" size="1073741823" type="V_WString" enabled="true" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Priority Band = IF [Weighted Score ] &gt;= 4.5 THEN "A"
+ELSEIF [Weighted Score ] &gt;=...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="39">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="76" y="16" width="721" height="375" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption><![CDATA[Demand ]]></Caption>
+          <Style TextColor="#314c4a" FillColor="#80ffff" BorderColor="#314c4a" Transparency="48" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText><![CDATA[Demand ]]></AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="1">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="102" y="65" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Demand And Sales$`</File>
+              <FormatSpecificOptions>
+                <FirstRowData>False</FirstRowData>
+                <ImportLine>1</ImportLine>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Cleaned dataset.xlsx
+Query=`Demand And Sales$`</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Inquiry ID" size="255" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Demand And Sales$`" type="V_String" />
+                <Field name="S_Id" size="255" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Demand And Sales$`" type="V_String" />
+                <Field name="Sales Person" size="255" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Demand And Sales$`" type="V_String" />
+                <Field name="Customer Name" size="255" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Demand And Sales$`" type="V_String" />
+                <Field name="Organization Name" size="255" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Demand And Sales$`" type="V_String" />
+                <Field name="Type" size="255" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Demand And Sales$`" type="V_String" />
+                <Field name="Designation/Role" size="255" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Demand And Sales$`" type="V_String" />
+                <Field name="Email &amp; WhatsApp" size="255" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Demand And Sales$`" type="V_String" />
+                <Field name="City/Location" size="255" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Demand And Sales$`" type="V_String" />
+                <Field name="Previous Orders" size="255" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Demand And Sales$`" type="V_String" />
+                <Field name="Items Ordered " size="255" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Demand And Sales$`" type="V_String" />
+                <Field name="Order Size" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Demand And Sales$`" type="Double" />
+                <Field name="Challenges Faced" size="255" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Demand And Sales$`" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="4">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="101" y="186" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Demand ScoreCard$`</File>
+              <FormatSpecificOptions>
+                <FirstRowData>False</FirstRowData>
+                <ImportLine>1</ImportLine>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Cleaned dataset.xlsx
+Query=`Demand ScoreCard$`</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Inquiry ID" size="255" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Demand ScoreCard$`" type="V_String" />
+                <Field name="Days to Event" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Demand ScoreCard$`" type="Double" />
+                <Field name="Urgency Score (20%)" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Demand ScoreCard$`" type="Double" />
+                <Field name="Budget (₹)" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Demand ScoreCard$`" type="Double" />
+                <Field name="Budget Score (20%)" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Demand ScoreCard$`" type="Double" />
+                <Field name="Volume (units)" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Demand ScoreCard$`" type="Double" />
+                <Field name="Volume Score (20%)" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Demand ScoreCard$`" type="Double" />
+                <Field name="Payment Reliability (15%)" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Demand ScoreCard$`" type="Double" />
+                <Field name="Design Readiness (15%)" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Demand ScoreCard$`" type="Double" />
+                <Field name="Digital Presence (10%)" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Demand ScoreCard$`" type="Double" />
+                <Field name="Composite Score" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Demand ScoreCard$`" type="Double" />
+                <Field name="Priority Band" size="255" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Demand ScoreCard$`" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="6">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="221" y="246" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Sales ScoreCard$`</File>
+              <FormatSpecificOptions>
+                <FirstRowData>False</FirstRowData>
+                <ImportLine>1</ImportLine>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Cleaned dataset.xlsx
+Query=`Sales ScoreCard$`</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="S_Id" size="255" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Sales ScoreCard$`" type="V_String" />
+                <Field name="Club/Committee (Y/N)" size="255" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Sales ScoreCard$`" type="V_String" />
+                <Field name="Lead Reach Potential" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Sales ScoreCard$`" type="Double" />
+                <Field name="Pitching &amp; Negotiation Skill" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Sales ScoreCard$`" type="Double" />
+                <Field name="CRM Discipline" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Sales ScoreCard$`" type="Double" />
+                <Field name="Ownership Attitude" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Sales ScoreCard$`" type="Double" />
+                <Field name="Response Timeliness" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Sales ScoreCard$`" type="Double" />
+                <Field name="Client Trust Feedback" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Sales ScoreCard$`" type="Double" />
+                <Field name="Total Weighted Score" source="File: C:\Users\SAMARTH\Downloads\Cleaned dataset.xlsx|||`Sales ScoreCard$`" type="Double" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="8">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="221" y="89" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Min Order Size" selected="True" type="Int64" size="8" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="13">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="222" y="162" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Days to Event" selected="True" type="Int64" size="8" />
+                <SelectField field="Urgency Score (20%)" selected="True" type="FixedDecimal" size="19.2" />
+                <SelectField field="Budget (₹)" selected="True" type="Int64" size="8" />
+                <SelectField field="Budget Score (20%)" selected="True" type="FixedDecimal" size="19.2" />
+                <SelectField field="Volume (units)" selected="True" type="Int64" size="8" />
+                <SelectField field="Volume Score (20%)" selected="True" type="FixedDecimal" size="19.2" />
+                <SelectField field="Payment Reliability (15%)" selected="True" type="FixedDecimal" size="19.2" />
+                <SelectField field="Design Readiness (15%)" selected="True" type="FixedDecimal" size="19.2" />
+                <SelectField field="Digital Presence (10%)" selected="True" type="FixedDecimal" size="19.2" />
+                <SelectField field="Composite Score" selected="True" type="FixedDecimal" size="19.2" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="15">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="318" y="246" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Club/Committee (Y/N)" selected="True" rename="Club/Committee" />
+                <SelectField field="Lead Reach Potential" selected="True" type="Int64" size="8" />
+                <SelectField field="Pitching &amp; Negotiation Skill" selected="True" type="Int64" size="8" />
+                <SelectField field="CRM Discipline" selected="True" type="Int64" size="8" />
+                <SelectField field="Ownership Attitude" selected="True" type="Int64" size="8" />
+                <SelectField field="Response Timeliness" selected="True" type="Int64" size="8" />
+                <SelectField field="Client Trust Feedback" selected="True" type="Int64" size="8" />
+                <SelectField field="Total Weighted Score" selected="True" type="FixedDecimal" size="19.2" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="17">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="306" y="126" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="Inquiry ID" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="Inquiry ID" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Right_Inquiry ID" selected="False" rename="Right_Inquiry ID" input="Right_" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="19">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="402" y="186" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="S_Id" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="S_Id" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Right_S_Id" selected="False" rename="Right_S_Id" input="Right_" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="23">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="498" y="186" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="24">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="594" y="186" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="IF [Composite Score] &gt;= 4.5 THEN &quot;A&quot;&#xA;ELSEIF [Composite Score] &gt;= 3.5 THEN &quot;B&quot;&#xA;ELSEIF [Composite Score] &gt;= 2.5 THEN &quot;C&quot;&#xA;ELSE &quot;D&quot;&#xA;ENDIF&#xA;" field="Priority Band" size="255" type="V_String" enabled="true" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Priority Band = IF [Composite Score] &gt;= 4.5 THEN "A"
+ELSEIF [Composite Score] &gt;=...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="31">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="714" y="186" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Urgency Score (20%)" selected="False" />
+                <SelectField field="Budget Score (20%)" selected="False" />
+                <SelectField field="Volume Score (20%)" selected="False" />
+                <SelectField field="Payment Reliability (15%)" selected="False" />
+                <SelectField field="Design Readiness (15%)" selected="False" />
+                <SelectField field="Digital Presence (10%)" selected="False" />
+                <SelectField field="Composite Score" selected="False" />
+                <SelectField field="Lead Reach Potential" selected="False" />
+                <SelectField field="Pitching &amp; Negotiation Skill" selected="False" />
+                <SelectField field="CRM Discipline" selected="False" />
+                <SelectField field="Ownership Attitude" selected="False" />
+                <SelectField field="Response Timeliness" selected="False" />
+                <SelectField field="Client Trust Feedback" selected="False" />
+                <SelectField field="Total Weighted Score" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="29" Connection="Join" />
+      <Destination ToolID="30" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="30" Connection="Output" />
+      <Destination ToolID="32" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="31" Connection="Output" />
+      <Destination ToolID="32" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="32" Connection="Join" />
+      <Destination ToolID="33" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="32" Connection="Right" />
+      <Destination ToolID="34" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="33" Connection="Output" />
+      <Destination ToolID="37" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="34" Connection="Output" />
+      <Destination ToolID="36" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="37" Connection="Output" />
+      <Destination ToolID="38" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="16" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="21" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="21" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="21" Connection="Join" />
+      <Destination ToolID="26" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="26" Connection="Output" />
+      <Destination ToolID="28" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="28" Connection="Output" />
+      <Destination ToolID="29" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Output" />
+      <Destination ToolID="29" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="14" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="20" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="20" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Join" />
+      <Destination ToolID="25" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="Output" />
+      <Destination ToolID="27" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="17" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="17" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output" />
+      <Destination ToolID="19" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Join" />
+      <Destination ToolID="19" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Join" />
+      <Destination ToolID="23" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="23" Connection="Output" />
+      <Destination ToolID="24" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="24" Connection="Output" />
+      <Destination ToolID="31" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <RunWithE2 value="True" />
+    <DefaultTZ value="Local" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <IsTemplate value="False" />
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Project_dataset_in_Alteryx[1]</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="613306f9-8aea-4628-89bd-b3f9c1aacc23" />
+      <Telemetry>
+        <PreviousWorkflowId value="5e4d820c-29cb-4478-bf80-a89eb52e9a29" />
+        <OriginWorkflowId value="564e2d8e-85f8-495a-b9b3-1f2fe2c7bad2" />
+      </Telemetry>
+      <PlatformWorkflowId value="" />
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
